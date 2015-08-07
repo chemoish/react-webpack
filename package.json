@@ -17,5 +17,10 @@
     "url": "https://github.com/chemoish/react-webpack/issues"
   },
   "homepage": "https://github.com/chemoish/react-webpack",
-  "devDependencies": {}
+  "dependencies": {
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "jsx-loader": "^0.13.2"
+  }
 }

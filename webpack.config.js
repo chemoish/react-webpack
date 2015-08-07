@@ -6,5 +6,12 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: './build'
+    },
+
+    module: {
+        loaders: [{
+            loader: 'jsx-loader',
+            test: /\.js$/
+        }]
     }
 };
