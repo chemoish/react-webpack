@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/chemoish/react-webpack",
   "dependencies": {
+    "jquery": "^2.1.4",
     "react": "^0.13.3"
   },
   "devDependencies": {
-    "jsx-loader": "^0.13.2"
+    "jsx-loader": "^0.13.2",
+    "webpack": "^1.11.0"
   }
 }

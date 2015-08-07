@@ -1,10 +1,20 @@
+var webpack = require('webpack');
+
 module.exports = {
-    entry: [
-        './src/app.js'
-    ],
+    entry: {
+        vendor: [
+            'jquery',
+            'react'
+        ],
+
+        app: './src/app.js',
+
+        home: './src/components/home.js',
+        setting: './src/components/setting.js'
+    },
 
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
         path: './build'
     },
 
@@ -13,5 +23,15 @@ module.exports = {
             loader: 'jsx-loader',
             test: /\.js$/
         }]
-    }
+    },
+
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin('common.js', [
+            'app',
+            'home',
+            'setting'
+        ]),
+
+        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+    ]
 };
