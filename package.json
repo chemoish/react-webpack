@@ -4,6 +4,7 @@
   "description": "Testing out react-webpack: http://christianalfoni.github.io/javascript/2014/12/13/did-you-know-webpack-and-react-is-awesome.html",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,7 +23,9 @@
     "react": "^0.13.3"
   },
   "devDependencies": {
+    "css-loader": "^0.15.6",
     "jsx-loader": "^0.13.2",
+    "style-loader": "^0.12.3",
     "webpack": "^1.11.0"
   }
 }
