@@ -10,5 +10,3 @@ module.exports = React.createClass({
         );
     }
 });
-
-React.render(<Home />, $('#main').get(0));

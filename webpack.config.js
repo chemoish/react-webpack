@@ -8,14 +8,13 @@ module.exports = {
         ],
 
         app: './src/app.js',
-
-        home: './src/components/home.js',
-        setting: './src/components/setting.js'
+        pageHome: './src/components/home.js',
+        pageSetting: './src/components/setting.js'
     },
 
     output: {
         filename: '[name].js',
-        path: './build'
+        path: 'build'
     },
 
     module: {
