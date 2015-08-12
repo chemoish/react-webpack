@@ -1,22 +1,35 @@
 import $ from 'jquery';
 import React from 'react';
+import Router from 'react-router';
 
-function resolveRoute() {
-    if (location.hash === '#settings') {
-        require.ensure([], function () {
-            var Setting = require('./components/setting/Setting.js');
+var {DefaultRoute, Link, Route, RouteHandler} = Router;
 
-            React.render(<Setting />, $('#main').get(0));
-        });
-    } else {
-        require.ensure([], function () {
-            var Home = require('./components/home/Home.js');
+var App = React.createClass({
+    render: function () {
+        return (
+            <div>
+                <header>
+                    <ul>
+                        <li><Link to="home">Home</Link></li>
+                        <li><Link to="setting">Settings</Link></li>
+                    </ul>
+                </header>
 
-            React.render(<Home />, $('#main').get(0));
-        });
+                <h1>Look Ma—I am an app</h1>
+
+                <RouteHandler />
+            </div>
+        );
     }
-}
+});
 
-window.onhashchange = resolveRoute;
+Router.run((
+    <Route path="/" handler={App}>
+        <DefaultRoute handler={require('react-router-proxy!./components/home/Home.js')}></DefaultRoute>
 
-resolveRoute();
+        <Route name="home" handler={require('react-router-proxy!./components/home/Home.js')}></Route>
+        <Route name="setting" path="settings" handler={require('react-router-proxy!./components/setting/Setting.js')}></Route>
+    </Route>
+), function (Handler) {
+    React.render(<Handler />, document.body);
+});

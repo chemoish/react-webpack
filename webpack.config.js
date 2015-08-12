@@ -7,11 +7,12 @@ module.exports = {
             'react'
         ],
 
-        app: './src/app.js',
-        index: './src/index.html'
+        index: './src/index.html',
 
-        // pageHome: './src/components/Home.js',
-        // pageSetting: './src/components/Setting.js'
+        app: './src/app.js',
+
+        pageHome: './src/components/home/Home.js',
+        pageSetting: './src/components/setting/Setting.js'
     },
 
     output: {
@@ -29,7 +30,7 @@ module.exports = {
                 'react-hot',
                 'babel-loader'
             ],
-            test:    /\.js$/
+            test: /\.js$/
         }, {
             loader: 'file?name=[name].[ext]',
             test:   /\.html$/,
@@ -38,9 +39,9 @@ module.exports = {
 
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('common.js', [
-            // 'app',
-            // 'pageHome',
-            // 'pageSetting'
+            'app',
+            'pageHome',
+            'pageSetting'
         ], 2),
 
         new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
