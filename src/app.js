@@ -30,6 +30,6 @@ Router.run((
         <Route name="home" handler={require('react-router-proxy!./components/home/Home.js')}></Route>
         <Route name="setting" path="settings" handler={require('react-router-proxy!./components/setting/Setting.js')}></Route>
     </Route>
-), function (Handler) {
+), Router.HistoryLocation, function (Handler) {
     React.render(<Handler />, document.body);
 });
