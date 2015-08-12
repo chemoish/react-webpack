@@ -1,14 +1,10 @@
 import $ from 'jquery';
 import React from 'react';
 
-import Shared from '../common/shared.js';
-
-import './home.css';
-
 export default React.createClass({
     render: function () {
         return (
-            <h1>Home</h1>
+            <h1>Category List</h1>
         );
     }
 });

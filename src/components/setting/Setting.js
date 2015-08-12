@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import React from 'react';
 
-import Shared from '../common/Shared.js';
+import Shared from '../common/shared.js';
 
 import './setting.css';
 

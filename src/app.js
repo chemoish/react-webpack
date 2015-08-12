@@ -11,6 +11,9 @@ var App = React.createClass({
                 <header>
                     <ul>
                         <li><Link to="home">Home</Link></li>
+                        <li><Link to="category-list">Category List</Link></li>
+                        <li><Link to="category">Category</Link></li>
+                        <li><Link to="movie">Movie</Link></li>
                         <li><Link to="setting">Settings</Link></li>
                     </ul>
                 </header>
@@ -25,10 +28,13 @@ var App = React.createClass({
 
 Router.run((
     <Route path="/" handler={App}>
-        <DefaultRoute handler={require('react-router-proxy!./components/home/Home.js')}></DefaultRoute>
+        <DefaultRoute handler={require('react-router-proxy!./components/home/home.js')}></DefaultRoute>
 
-        <Route name="home" handler={require('react-router-proxy!./components/home/Home.js')}></Route>
-        <Route name="setting" path="settings" handler={require('react-router-proxy!./components/setting/Setting.js')}></Route>
+        <Route name="category" handler={require('react-router-proxy!./components/category/category.js')}></Route>
+        <Route name="category-list" handler={require('react-router-proxy!./components/category/category-list.js')}></Route>
+        <Route name="home" handler={require('react-router-proxy!./components/home/home.js')}></Route>
+        <Route name="movie" handler={require('react-router-proxy!./components/movie/movie.js')}></Route>
+        <Route name="setting" path="settings" handler={require('react-router-proxy!./components/setting/setting.js')}></Route>
     </Route>
 ), Router.HistoryLocation, function (Handler) {
     React.render(<Handler />, document.body);

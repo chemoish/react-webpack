@@ -11,8 +11,11 @@ module.exports = {
 
         app: './src/app.js',
 
-        pageHome: './src/components/home/Home.js',
-        pageSetting: './src/components/setting/Setting.js'
+        pageCategory: './src/components/category/category.js',
+        pageCategoryList: './src/components/category/category-list.js',
+        pageHome: './src/components/home/home.js',
+        pageMovie: './src/components/movie/movie.js',
+        pageSetting: './src/components/setting/setting.js'
     },
 
     output: {
@@ -40,7 +43,10 @@ module.exports = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('common.js', [
             'app',
+            'pageCategory',
+            'pageCategoryList',
             'pageHome',
+            'pageMovie',
             'pageSetting'
         ], 2),
 
