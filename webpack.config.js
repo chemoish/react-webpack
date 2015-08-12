@@ -9,13 +9,31 @@ module.exports = {
 
         index: './src/index.html',
 
-        app: './src/app.js',
+        app: [
+            'webpack/hot/only-dev-server',
+            './src/app.js'
+        ],
 
-        pageCategory: './src/components/category/category.js',
-        pageCategoryList: './src/components/category/category-list.js',
-        pageHome: './src/components/home/home.js',
-        pageMovie: './src/components/movie/movie.js',
-        pageSetting: './src/components/setting/setting.js'
+        pageCategory: [
+            'webpack/hot/only-dev-server',
+            './src/components/category/category.js'
+        ],
+        pageCategoryList: [
+            'webpack/hot/only-dev-server',
+            './src/components/category/category-list.js'
+        ],
+        pageHome: [
+            'webpack/hot/only-dev-server',
+            './src/components/home/home.js'
+        ],
+        pageMovie: [
+            'webpack/hot/only-dev-server',
+            './src/components/movie/movie.js'
+        ],
+        pageSetting: [
+            'webpack/hot/only-dev-server',
+            './src/components/setting/setting.js'
+        ]
     },
 
     output: {
