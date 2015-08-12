@@ -1,5 +1,5 @@
-var $ = require('jquery');
-var React = require('react');
+import $ from 'jquery';
+import React from 'react';
 
 function resolveRoute() {
     if (location.hash === '#settings') {
