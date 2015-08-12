@@ -7,10 +7,8 @@ module.exports = {
             'react'
         ],
 
-        app: [
-            'webpack/hot/only-dev-server',
-            './src/app.js'
-        ],
+        app: './src/app.js',
+        index: './src/index.html'
 
         // pageHome: './src/components/Home.js',
         // pageSetting: './src/components/Setting.js'
@@ -24,11 +22,14 @@ module.exports = {
     module: {
         loaders: [{
             loader: 'style-loader!css-loader',
-            test: /\.css$/
+            test:   /\.css$/
         }, {
             exclude: /node_modules/,
             loader: 'babel-loader',
-            test: /\.js$/
+            test:    /\.js$/
+        }, {
+            loader: 'file?name=[name].[ext]',
+            test:   /\.html$/,
         }]
     },
 
