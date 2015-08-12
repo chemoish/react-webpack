@@ -1,6 +1,14 @@
 var webpack = require('webpack');
 
 module.exports = {
+    devServer: {
+        colors:             true,
+        contentBase:        './build',
+        historyApiFallback: true,
+        inline:             true,
+        progress:           true
+    },
+
     entry: {
         vendor: [
             'jquery',
@@ -20,7 +28,8 @@ module.exports = {
 
     output: {
         filename: '[name].js',
-        path: 'build'
+        path: './build',
+        publicPath: '/'
     },
 
     module: {
