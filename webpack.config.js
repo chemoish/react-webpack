@@ -7,7 +7,10 @@ module.exports = {
             'react'
         ],
 
-        app: './src/app.js',
+        app: [
+            'webpack/hot/only-dev-server',
+            './src/app.js'
+        ],
 
         // pageHome: './src/components/Home.js',
         // pageSetting: './src/components/Setting.js'

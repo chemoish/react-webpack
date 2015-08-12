@@ -4,8 +4,8 @@
   "description": "Testing out react-webpack: http://christianalfoni.github.io/javascript/2014/12/13/did-you-know-webpack-and-react-is-awesome.html",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build",
+    "build": "webpack --progress --colors",
+    "dev": "webpack-dev-server --hot --progress --colors --content-base build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
