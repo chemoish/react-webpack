@@ -1,10 +1,9 @@
-import $ from 'jquery';
 import React from 'react';
 
 import Category from './_category.js';
 
 export default React.createClass({
-    render: function () {
+    render() {
         let categories = [];
 
         this.props.categories.forEach(function (category, index, list) {

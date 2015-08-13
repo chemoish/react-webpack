@@ -1,10 +1,9 @@
-import $ from 'jquery';
 import React from 'react';
 
 import Movie from './_movie.js';
 
 export default React.createClass({
-    render: function () {
+    render() {
         let movies = [];
 
         this.props.movies.forEach(function (movie, index, list) {

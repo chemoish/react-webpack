@@ -1,11 +1,10 @@
-import $ from 'jquery';
 import React from 'react';
 import Router from 'react-router';
 
 var {Link} = Router;
 
 export default React.createClass({
-    render: function () {
+    render() {
         let movie = this.props.movie;
 
         return (

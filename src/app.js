@@ -1,11 +1,10 @@
-import $ from 'jquery';
 import React from 'react';
 import Router from 'react-router';
 
 var {DefaultRoute, Link, Route, RouteHandler} = Router;
 
 var App = React.createClass({
-    render: function () {
+    render() {
         return (
             <div>
                 <header>

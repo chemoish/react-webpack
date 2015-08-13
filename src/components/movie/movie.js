@@ -1,8 +1,7 @@
-import $ from 'jquery';
 import React from 'react';
 
 export default React.createClass({
-    render: function () {
+    render() {
         return (
             <h1>Movie</h1>
         );

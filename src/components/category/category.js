@@ -1,39 +1,25 @@
-import $ from 'jquery';
 import React from 'react';
+import Reflux from 'reflux';
 
+import CategoryDomainAction from './store/category-domain-action';
+import CategoryDomainStore from './store/category-domain-store.js';
 import MovieList from '../movie/component/_movie-list.js';
 
 export default React.createClass({
-    componentDidMount: function () {
+    mixins: [Reflux.connect(CategoryDomainStore)],
+
+    componentDidMount() {
         let slug = this.props.params.slug;
 
-        $.ajax({
-            url: 'https://qa-api-domain.disneymoviesanywhere.com/domain/categories/' + slug,
-
-            headers: {
-                'api-version': '1.0',
-                device: 'web'
-            }
-        })
-            .success(function (data, textStatus, jqXHR) {
-                this.setState({
-                    movies: data.items
-                });
-            }.bind(this));
+        CategoryDomainAction.load(slug);
     },
 
-    getInitialState: function () {
-        return {
-            movies: []
-        };
-    },
-
-    render: function () {
+    render() {
         return (
             <div>
                 <h1>Category</h1>
 
-                <MovieList movies={this.state.movies} />
+                <MovieList movies={this.state.items} />
             </div>
         );
     }

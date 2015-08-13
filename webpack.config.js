@@ -1,3 +1,4 @@
+var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
@@ -12,7 +13,10 @@ module.exports = {
     entry: {
         vendor: [
             'jquery',
-            'react'
+            'react',
+            'react-router',
+            'reflux',
+            'lodash'
         ],
 
         index: './src/index.html',
@@ -24,6 +28,13 @@ module.exports = {
         filename: '[name].js',
         path: './build',
         publicPath: '/'
+    },
+
+    resolve: {
+        alias: {
+            // set enviroment specific variables
+            config: path.join(__dirname, 'config', process.env.ENVIRONMENT || 'development')
+        }
     },
 
     module: {
@@ -44,6 +55,12 @@ module.exports = {
     },
 
     plugins: [
+        // sets environment specific flags
+        new webpack.DefinePlugin({
+            __DEV__: process.env.BUILD_DEV || 'true',
+            __PRERELEASE__: process.env.BUILD_PRERELEASE || 'false'
+        }),
+
         new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
     ]
 };
